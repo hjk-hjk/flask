@@ -1,0 +1,36 @@
+{% include  'top.html' %}
+<section>
+<br><br>
+<div align="center" >
+ <h2> 자료실 목록 보기 </h2>
+
+<table border="1" width="700">
+<tr><td>번호 </td><td>이름 </td><td>제목 </td>
+  <td>파일명 </td><td>이미지</td>
+  <td>조회수(d) </td></tr>
+
+  {% for  row  in rows %}
+  <tr>
+    <td> {{ row['idx'] }}  </td>
+    <td>
+      <a href="psd_edit?idx={{ row['idx'] }}">
+      {{ row['sname'] }}
+      </a>
+    </td>
+    <td> {{ row['title'] }} </td>
+    <td> {{ row['files'] }} </td>
+    <td> <img src=" {{ url_for('static',filename='/psd/files/' ~ row['files']) }}" width="100" > </td>
+    <td>
+      <a href="{{ url_for('psd_bp.psd_delete',idx=row['idx'], files=row['files']  )}}">
+      {{ row['cnt'] }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+
+</table>
+<A HREF="/psd/psd_form" > 글쓰기 </A>
+</div>
+<br>
+</section>
+{% include  'bottom.html' %}

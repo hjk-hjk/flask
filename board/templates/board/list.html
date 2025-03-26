@@ -1,0 +1,60 @@
+{% include  'top.html' %}
+<section>
+<br><br>
+<div align="center" >
+ <h2> 게시판 목록 보기 {{total_count}}//전체페이지{{total_page}}: {{now_page}}</h2>
+
+<table border="1" width="700">
+<tr><td>번호 </td><td>이름 </td><td>제목 </td><td>조회수(d) </td></tr>
+
+  {% for  row  in rows %}
+  <tr>
+    <td align="center"> {{ row['idx'] }}  </td>
+    <td>
+      <a href="{{url_for('board_bp.board_edit',idx=row['idx'] ,ch1=request.args.get('ch1')
+      ,ch2=request.args.get('ch2'))}}">
+      {{ row['sname'] }}
+      </a>
+    </td>
+    <td> {{ row['title'] }} </td>
+    <td>
+      <a href="/board/board_delete?idx={{ row['idx'] }}">
+      {{ row['cnt'] }}
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+
+</table>
+<A HREF="/board/board_form" > 글쓰기 </A><br>
+
+  <a href ="{{url_for('board_bp.board_list', start_idx=0)  }}" > 처음 </a> &emsp;&emsp;&emsp;
+
+  {%if start_idx > 9%}
+  <a href ="{{url_for('board_bp.board_list', start_idx=start_idx-page_size)  }}" > 이전 </a>
+  {% else %}
+  이전
+  {% endif %}
+  &emsp;&emsp;&emsp;
+  {%if now_page < total_page %}
+  <a href ="{{url_for('board_bp.board_list', start_idx=start_idx+page_size)  }}" > 다음 </a>
+  {% else %}
+  다음
+  {% endif %}
+  &emsp;&emsp;&emsp;
+  <a href ="{{url_for('board_bp.board_list', start_idx=(total_page-1)*page_size)  }}" > 마지막 </a>
+
+<form action="/board/board_list">
+  <select name="ch1">
+    <option value="sname">이름</option>
+    <option value="title">제목</option>
+
+  </select>
+  <input type="text" name="ch2">
+  <input type="submit" value="검색하기">
+</form>
+
+</div>
+<br/>
+</section>
+{% include  'bottom.html' %}
