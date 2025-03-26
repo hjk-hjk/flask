@@ -24,15 +24,15 @@
 </tr>
   
 <tr>
-  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/ridmi/baba.PNG?raw=true" width=400  height=300  />  </td>
+  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/readme/baba.PNG?raw=true" width=400  height=300  />  </td>
   
-  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/ridmi/ddd.PNG?raw=true" width=400  height=300  />  </td>
+  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/readme/ddd.PNG?raw=true" width=400  height=300  />  </td>
 </tr>  
 
 <tr>
-  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/ridmi/ruda.PNG?raw=true"width=400  height=300  />  </td>
+  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/readme/ruda.PNG?raw=true"width=400  height=300  />  </td>
   
-  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/ridmi/uni.PNG?raw=true" width=400  height=300  />  </td>
+  <td  > <img src="https://github.com/hjk-hjk/flask/blob/master/readme/uni.PNG?raw=true" width=400  height=300  />  </td>
 </tr>  
 
 </table>
